@@ -1,7 +1,7 @@
 from time import sleep
 primeiro = int(input('Digite o primeiro termo: ')) 
 razao = int(input('Digite a razão: '))
-n = int(input('Quantos elementos exibir: '))
+n = int(input('Quantos elementos devem ser exibidos: '))
 
 # a(n) = a(1) + (n-1).r
 ultimo = primeiro + (n-1) * razao
