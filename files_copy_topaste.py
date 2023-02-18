@@ -14,4 +14,6 @@ def copy_files(files, temp_folder_path): # Função para copiar os arquivos do d
         shutil.copy(f, temp_folder_path)
 def get_external_drives(): # Função para detectar dispositivos externos ou removíveis conectados ao computador
     drives = []
+    for partition in psutil.disk_partitions():
+        
 
