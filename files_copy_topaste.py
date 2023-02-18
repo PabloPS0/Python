@@ -16,9 +16,13 @@ def get_external_drives(): # Função para detectar dispositivos externos ou rem
     drives = []
     for partition in psutil.disk_partitions():
         if "removable" in partition.opts or "cdrom" in partition.opts:
-            patition.append(patition.device)    
+            partition.append(partition.device)    
         return drives
 def is_valid_drives(): # Função para verificar se os drives são válidos para o envio dos arquivos(pen drive, HD externo, etc.)
     if os.path.exist(drives):
         return True
     return False
+def send_fles(temp_folder_path, valid_drives): # Função para enviar os arquivos para os dispositivos externos válidos
+    for drive in valid_drives:
+        shutil.move(temp_folder_path, os.path.join(drive, "new folder"))
+while True: # Loop que executa todas essas funções periodicamente para verificar se há novos arquivos no diretório e dispositivos externos conectados
