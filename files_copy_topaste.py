@@ -15,5 +15,10 @@ def copy_files(files, temp_folder_path): # Função para copiar os arquivos do d
 def get_external_drives(): # Função para detectar dispositivos externos ou removíveis conectados ao computador
     drives = []
     for partition in psutil.disk_partitions():
-        
-
+        if "removable" in partition.opts or "cdrom" in partition.opts:
+            patition.append(patition.device)    
+        return drives
+def is_valid_drives(): # Função para verificar se os drives são válidos para o envio dos arquivos(pen drive, HD externo, etc.)
+    if os.path.exist(drives):
+        return True
+    return False
