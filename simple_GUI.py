@@ -13,3 +13,9 @@ layout = [  [sg.Text('Nome')],
 window = sg.Window('Cadastro', layout)
 
 # Evento de Loop para processar "eventos" e obter os "valores" da entrada de dados
+while True:
+    event, values = window.read()
+    if events == sg.WIN_CLOSED or event == 'Cancel': # Se o usuário fechar a janela ou clicar em CANCELAR
+        break # A janela vai quebrar ou fechar
+    print('Você se cadastrou com sucesso!', values[0])
+window.close()
